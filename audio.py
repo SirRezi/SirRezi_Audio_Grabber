@@ -43,17 +43,17 @@ def download_audio():
 root = tk.Tk()
 root.title("Audio Downloader")
 root.geometry("400x300")  
-root.configure(bg="#4d0000")  
+root.configure(bg="#2c3e50") 
 
 style = ttk.Style()
-style.configure("TLabel", foreground="#ffffff", background="#4d0000") 
-style.configure("TButton", foreground="#000000", background="#b30000", borderwidth=1)  
+style.configure("TLabel", font=("Arial", 12), foreground="#ecf0f1", background="#2c3e50") 
+style.configure("TButton", font=("Arial", 12), foreground="#000000", background="#e74c3c", borderwidth=1)  # Schriftfarbe geändert
 
-made_by_label = tk.Label(root, text="Made by Sirrezi 2024", font=("Arial", 10), fg="#ffffff", bg="#4d0000")
-made_by_label.pack(side=tk.BOTTOM, pady=5)
+made_by_label = tk.Label(root, text="Made by Sirrezi 2024", font=("Arial", 10), fg="#ecf0f1", bg="#2c3e50")
+made_by_label.pack(side=tk.BOTTOM, pady=(5, 10))  
 
 url_label = ttk.Label(root, text="YouTube oder Spotify Link:")
-url_label.pack(padx=10, pady=5)
+url_label.pack(padx=10, pady=(10, 5))  
 url_entry = ttk.Entry(root, width=40)
 url_entry.pack(padx=10, pady=5)
 
@@ -66,8 +66,8 @@ format_dropdown.pack(padx=10, pady=5)
 
 path_label = ttk.Label(root, text="Speicherort:")
 path_label.pack(padx=10, pady=5)
-path_frame = tk.Frame(root, bg="#4d0000")
-path_frame.pack(padx=10, pady=5)
+path_frame = ttk.Frame(root, style="TFrame")  
+path_frame.pack(padx=10, pady=5, anchor="center") 
 path_entry = ttk.Entry(path_frame, width=30)
 path_entry.pack(side=tk.LEFT)
 path_button = ttk.Button(path_frame, text="Durchsuchen", command=choose_download_path)
@@ -76,7 +76,7 @@ path_button.pack(side=tk.LEFT)
 download_button = ttk.Button(root, text="Herunterladen", command=download_audio)
 download_button.pack(padx=10, pady=10)
 
-result_label = ttk.Label(root, text="", foreground="green", background="#4d0000")
+result_label = ttk.Label(root, text="", foreground="green", background="#2c3e50")
 result_label.pack(padx=10, pady=5)
 
 root.mainloop()
